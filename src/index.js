@@ -1,18 +1,29 @@
 
 // ════════════════ Exercise 1 ════════════════════ //
 /* 
-TODO: Edit the string assigned to the variable 'result' so that it uses template literals rather than string concatenation.
+TODO: Edit the string assigned to the variable 'result' so that it uses template literals rather than string concatenation to print out "Hey [FRIEND'S NAME]," where the text in [FRIEND'S NAME] is replaced by the value within the `name` parameter.
+
+No other edits need to be made to the function.
 */
 function exercise1(name) {
 
-    let result = "Hey [NAME],";
+    let result = "Hey [FRIEND'S NAME],";
 
     document.getElementById("e1").innerText = result;
 }
 
 // ════════════════ Exercise 2 ════════════════════ //
 /* 
-TODO: Edit the string assigned to the variable 'result' so that it uses template literals rather than string concatenation. Make sure to maintain line breaks without using newline characters (\n).
+TODO: Edit the string assigned to the variable 'result' so that it uses template literals rather than string concatenation to print out the following:
+
+"I just wanted to take a moment to tell you how [ADJECTIVE 1] you are!
+Remember that time we [PAST TENSE VERB] together?
+That was [ADJECTIVE 2]! We need to do it again soon."
+
+- Make sure to maintain line breaks without using newline characters (\n). 
+- The text in [ADJ1] should be replaced by the value within the `adj1` parameter.
+- The text in [VERB] should be replaced by the value within the `verb` parameter.
+- The text in [ADJ2] should be replaced by the value within the `adj2` parameter.
 */
 function exercise2(adj1, verb, adj2) {
 
@@ -27,16 +38,16 @@ function exercise2(adj1, verb, adj2) {
 
 // ════════════════ Exercise 3 ════════════════════ //
 /* 
-TODO: Edit the string assigned to the variable 'result' so that it uses a tagged template rather than string concatenation. The tagged function to use is named 'sarcasmCase'. You do not need to edit the sarcasmCase or sarcasmConverter functions.
+TODO: Edit the string assigned to the variable 'result' so that it uses a tagged template rather than string concatenation. The function to use is named 'sarcasmCase'. You do not need to edit the sarcasmCase or sarcasmConverter functions. The text in [ADJ] should be replaced by the value within the `adj` parameter.
 */
 function exercise3(adj) {
 
-    let result = "I hope you're having a " + adj + " day!"
+    let result = "I hope you're having a [ADJ] day!"
 
     document.getElementById("e3").innerText = result;
 }
 
-// tagged function
+// function for tagged template
 function sarcasmCase(strings, ...values) {
 
     let result = '';
@@ -103,7 +114,7 @@ function handleSubmit(event) {
     exercise2(formData.get("adjective1"), formData.get("pastVerb"), formData.get("adjective2"));
     exercise3(formData.get("adjective3"));
 
-    // Reset the form (optional)
+    // Reset the form
     event.target.reset();
 }
 
